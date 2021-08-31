@@ -15,4 +15,11 @@ public class GameRunner {
         game.left();
         game.right();
     }
+
+    public void init(){
+        System.out.println(game.getName()+" game is started");
+    }
+    public void destroy(){
+        System.out.println(game.getName()+" game is destroyed");
+    }
 }

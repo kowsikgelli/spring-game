@@ -5,8 +5,14 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class Temp implements BeanPostProcessor {
     @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("BeforeInitialization : " + beanName);
+        return bean;
+    }
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException{
+        System.out.println("AfterInitialization : " + beanName);
+        return bean;
     }
 
 }

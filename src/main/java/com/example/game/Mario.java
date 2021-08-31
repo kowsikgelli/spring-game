@@ -1,14 +1,22 @@
 package com.example.game;
 
+import java.util.HashMap;
+
 public class Mario implements GamingConsole{
     public String name;
     private String license = "license not found";
     public String company;
+    HashMap<Integer,String> users = new HashMap<>();
     public Mario(String name,String company){
         this.name = name;
         this.company = company;
     }
-    public Mario(String name,String company,String license){
+
+    public void setUsers(HashMap<Integer, String> users) {
+        this.users = users;
+    }
+
+    public Mario(String name, String company, String license){
         this.name = name;
         this.license = license;
         this.company = company;
@@ -18,6 +26,11 @@ public class Mario implements GamingConsole{
     }
     public String getCompany(){
         return company;
+    }
+
+    @Override
+    public HashMap<Integer, String> getUsers() {
+        return users;
     }
 
     @Override
@@ -36,14 +49,13 @@ public class Mario implements GamingConsole{
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
     public void right() {
         System.out.println("Mario Right");
     }
 
-    public void init(){
-        System.out.println("Mario game is started");
-    }
-    public void destroy(){
-        System.out.println("Mario game is destroyed");
-    }
 }

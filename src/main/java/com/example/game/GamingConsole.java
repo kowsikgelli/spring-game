@@ -1,5 +1,7 @@
 package com.example.game;
 
+import java.util.HashMap;
+
 public interface GamingConsole {
     void jump();
     void fall();
@@ -7,4 +9,6 @@ public interface GamingConsole {
     void right();
     String getLicense();
     String getCompany();
+    HashMap<Integer, String> getUsers();
+    String getName();
 }

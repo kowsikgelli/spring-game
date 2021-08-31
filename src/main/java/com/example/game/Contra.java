@@ -1,10 +1,26 @@
 package com.example.game;
 
+import java.util.HashMap;
+
 public class Contra implements GamingConsole{
     public String name;
     private String license = "license not found";
     public String company;
-    public Contra(String name,String company){
+    HashMap<Integer,String> users = new HashMap<>();
+
+    public String getName() {
+        return name;
+    }
+
+    public HashMap<Integer, String> getUsers() {
+        return users;
+    }
+
+    public void setUsers(HashMap<Integer, String> users) {
+        this.users = users;
+    }
+
+    public Contra(String name, String company){
         this.name = name;
         this.company = company;
     }
@@ -39,10 +55,4 @@ public class Contra implements GamingConsole{
         System.out.println("Contra Right");
     }
 
-    public void init(){
-        System.out.println("Contra game is started");
-    }
-    public void destroy(){
-        System.out.println("Contra game is destroyed");
-    }
 }

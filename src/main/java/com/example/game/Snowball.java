@@ -1,9 +1,13 @@
 package com.example.game;
 
+import java.util.HashMap;
+
 public class Snowball implements GamingConsole{
     public String name;
     private String license = "license not found";
     public String company;
+    HashMap<Integer,String> users = new HashMap<>();
+
     public Snowball(String name,String company){
         this.name = name;
         this.company = company;
@@ -13,12 +17,29 @@ public class Snowball implements GamingConsole{
         this.license = license;
         this.company = company;
     }
+
+
+    public void setUsers(HashMap<Integer, String> users) {
+        this.users = users;
+    }
+
+
+    @Override
+    public String getName() {
+        return name;
+    }
     public String getLicense() {
         return license;
     }
     public String getCompany(){
         return company;
     }
+
+    @Override
+    public HashMap<Integer, String> getUsers() {
+        return users;
+    }
+
     @Override
     public void jump() {
         System.out.println("Snowball Jump");
@@ -39,10 +60,4 @@ public class Snowball implements GamingConsole{
         System.out.println("Snowball Right");
     }
 
-    public void init(){
-        System.out.println("Snowball game is started");
-    }
-    public void destroy(){
-        System.out.println("Snowball game is destroyed");
-    }
 }
