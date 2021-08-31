@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="gameRunner" class="com.example.game.GameRunner">
+        <constructor-arg ref="snowball"/>
+    </bean>
+    <bean id="contra" class="com.example.game.Contra" init-method="init" destroy-method="destroy">
+        <constructor-arg value="Contra" type="String"/>
+        <constructor-arg value="Unity Games" type="String"/>
+        <constructor-arg value="licensed" type="String" />
+    </bean>
+    <bean id="mario" class="com.example.game.Mario" init-method="init" destroy-method="destroy">
+        <constructor-arg value="Mario" type="String"/>
+        <constructor-arg value="Unity Games" type="String"/>
+    </bean>
+    <bean id="snowball" class="com.example.game.Snowball" init-method="init" destroy-method="destroy">
+        <constructor-arg value="Snowball" type="String"/>
+        <constructor-arg value="Tencent Games" type="String"/>
+        <constructor-arg value="licensed" type="String" />
+    </bean>
+</beans>
