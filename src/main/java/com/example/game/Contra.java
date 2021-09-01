@@ -1,7 +1,10 @@
 package com.example.game;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 
+@Component
 public class Contra implements GamingConsole{
     public String name;
     private String license = "license not found";
@@ -19,16 +22,16 @@ public class Contra implements GamingConsole{
     public void setUsers(HashMap<Integer, String> users) {
         this.users = users;
     }
-
-    public Contra(String name, String company){
-        this.name = name;
-        this.company = company;
-    }
-    public Contra(String name,String company,String license){
-        this.name = name;
-        this.license = license;
-        this.company = company;
-    }
+//
+//    public Contra(String name, String company){
+//        this.name = name;
+//        this.company = company;
+//    }
+//    public Contra(String name,String company,String license){
+//        this.name = name;
+//        this.license = license;
+//        this.company = company;
+//    }
     public String getLicense() {
         return license;
     }
